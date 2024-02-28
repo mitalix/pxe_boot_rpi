@@ -9,6 +9,9 @@
 - rpi4b  -->> SERIAL_NUMBER=ac8854ec
 
 Using a Dell wireless laptop to serve tftp and nfs
+
+Very useful information :https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#network-booting
+
 #### Forwards ...
 
 Go to https://www.raspberrypi.com/software/operating-systems/ to dowload and extract your image.
