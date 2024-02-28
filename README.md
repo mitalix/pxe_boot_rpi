@@ -59,11 +59,12 @@ Depending on your configuration, dnsmasq won't be needed anymore.
 
 **/boot/cmdline.txt:**
 ```
-CMDLINE="console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,vers=3 rw ip=dhcp rootwait elevator=deadline"
+console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,vers=3 rw ip=dhcp rootwait elevator=deadline
 ```
 **/etc/fstab :**
-```FSTAB="192.168.0.206:/pxe / nfs defaults,vers=3 0 0
-192.168.0.206:/pxe/boot/firmware /boot/firmware nfs defaults,vers=3 0 0"
+```
+192.168.0.206:/pxe / nfs defaults,vers=3 0 0
+192.168.0.206:/pxe/boot/firmware /boot/firmware nfs defaults,vers=3 0 0
 ```
 **/etc/exports:**
 ```/srv/tftp *(rw,sync,no_subtree_check,no_root_squash)
