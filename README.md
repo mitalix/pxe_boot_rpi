@@ -3,6 +3,7 @@
 - rpi3b+ -->> SERIAL_NUMBER=76d2a334
 - rpi4b  -->> SERIAL_NUMBER=ac8854ec
 
+Using a Dell wireless laptop to serve tftp and nfs
 #### Forwards ...
 
 Go to https://www.raspberrypi.com/software/operating-systems/ and dowload extract your image.
