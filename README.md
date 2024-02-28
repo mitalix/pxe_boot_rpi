@@ -37,7 +37,7 @@ sudo systemctl start dnsmasq
 sudo exportfs -a
 ```
 
-In the meantime, run on another screen to watch if the system tries to download files. If it works, then you will see failure messages, but then success messages. It takes a few minutes over a wifi nfs mount, he he.
+In the meantime, run on another screen to watch if the system tries to download files. If it works, then you will see failure messages, but then success messages. It takes more than a few minutes over a wifi nfs mount, he he.
 
 ```
 journalctl -fex
