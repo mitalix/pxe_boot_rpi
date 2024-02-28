@@ -41,12 +41,17 @@ sudo rmdir -v /pxe
 
 sudo kpartx -vd 2023-12-11-raspios-bookworm-arm64-lite.img
 ```
-> Edit /etc/fstab /boot/cmdline.txt /etc/exports & /etc/dnsmasq.conf
-Replace this with $CMDLINE in /boot/cmdline.txt: 
 
-```console=serial0,115200 console=tty1 root=PARTUUID=4e639091-02 rootfstype=ext4 fsck.repair=yes rootwait quiet init=/usr/lib/raspberrypi-sys-m
-ods/firstboot
-```
+> [!NOTE]
+> Make sure you make backups of these files before working on live systems : 
+- /etc/fstab 
+- /boot/cmdline.txt 
+- /etc/exports 
+- /etc/dnsmasq.conf
+
+> Edit /etc/fstab /boot/cmdline.txt /etc/exports & /etc/dnsmasq.conf
+
+**/boot/cmdline.txt:**
 
 ```
 CMDLINE="console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,vers=3 rw ip=dhcp rootwait elevator=deadline"
