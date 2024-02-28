@@ -37,13 +37,13 @@ sudo systemctl start dnsmasq
 sudo exportfs -a
 ```
 
-In the meantime, run on another screen to watch if the system tries to download files. If it works, then you will see failure messages, but then success messages. It takes more than a few minutes over a wifi nfs mount, but it works.
+In the meantime, on the server, run on another screen to watch if the system tries to download files. If it works, then you will see failure messages, but then success messages. It takes more than a few minutes over a wifi nfs mount, but it works.
 
 ```
 journalctl -fex
 ```
 
-If it succeeds on the server machine, then you will see message on the client machine where the control is transferred. 
+If it succeeds on the server machine, then you will see messages on the client machine where the control is transferred. 
 
 Depending on your configuration, dnsmasq won't be needed anymore.
 
@@ -71,7 +71,8 @@ console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,ver
 192.168.0.206:/pxe/boot/firmware /boot/firmware nfs defaults,vers=3 0 0
 ```
 **/etc/exports:**
-```/srv/tftp *(rw,sync,no_subtree_check,no_root_squash)
+```
+/srv/tftp *(rw,sync,no_subtree_check,no_root_squash)
 /pxe/boot/firmware *(rw,sync,no_subtree_check,no_root_squash)
 /pxe *(rw,sync,no_subtree_check,no_root_squash)
 ```
