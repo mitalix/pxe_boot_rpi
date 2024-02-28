@@ -11,7 +11,7 @@
 Using a Dell wireless laptop to serve tftp and nfs
 #### Forwards ...
 
-Go to https://www.raspberrypi.com/software/operating-systems/ and dowload extract your image.
+Go to https://www.raspberrypi.com/software/operating-systems/ to dowload and extract your image.
 
 Run these commands ...
 
@@ -45,14 +45,17 @@ If it succeeds on the server machine, then you will see message on the client ma
 Depending on your configuration, dnsmasq won't be needed anymore.
 
 
-> [!NOTE]
+> [!WARNING]
 > Make sure to avoid any confusion and make backups of these files before working on live systems : 
+1. On the client:
 - /etc/fstab 
 - /boot/cmdline.txt 
+2. On the server:
 - /etc/exports 
 - /etc/dnsmasq.conf
 
-> Edit /etc/fstab /boot/cmdline.txt /etc/exports & /etc/dnsmasq.conf
+> [!NOTE]
+> Edit /etc/fstab /boot/cmdline.txt on the client system (directly through the mounts done above)
 
 **/boot/cmdline.txt:**
 
