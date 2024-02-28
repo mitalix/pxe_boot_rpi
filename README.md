@@ -16,7 +16,7 @@ Very useful information :https://www.raspberrypi.com/documentation/computers/ras
 
 Go to https://www.raspberrypi.com/software/operating-systems/ to dowload and extract your image.
 
-#### Run these commands ...
+#### Check the *Configuration* section below and then *Run* these commands ...
 
 ```
 sudo kpartx -va 2023-12-11-raspios-bookworm-arm64-lite.img
@@ -47,6 +47,7 @@ If it succeeds on the server machine, then you will see message on the client ma
 
 Depending on your configuration, dnsmasq won't be needed anymore.
 
+### Configuration
 
 > [!WARNING]
 > Make sure to avoid any confusion and make backups of these files before working on live systems : 
