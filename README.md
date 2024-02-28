@@ -40,7 +40,7 @@ In the meantime, run on another screen to watch if the system tries to download 
 journalctl -fex
 ```
 
-If it succeeds on the server machine, then you will see message on the client machine where the control is transfered. 
+If it succeeds on the server machine, then you will see message on the client machine where the control is transferred. 
 
 Depending on your configuration, dnsmasq won't be needed anymore.
 
