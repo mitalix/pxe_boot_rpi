@@ -5,6 +5,10 @@
 
 #### Forwards ...
 
+Go to https://www.raspberrypi.com/software/operating-systems/ and dowload extract your image.
+
+Run these commands ...
+
 ```
 sudo kpartx -va 2023-12-11-raspios-bookworm-arm64-lite.img
 
@@ -23,17 +27,17 @@ sudo systemctl start dnsmasq
 
 sudo exportfs -a
 ```
-#### Backwards ...
-```
-sudo systemctl stop dnsmasq
-sudo umount -v /srv/tftp/$SERIAL_NUMBER
-sudo umount -v /pxe/boot/firmware
-sudo umount-v  /pxe
 
-sudo rmdir -v /pxe
+In the meantime, run on another screen to watch if the system tries to download files. If it works, then you will see failure messages, but then success messages. It takes a few minutes over a wifi nfs mount, he he.
 
-sudo kpartx -vd 2023-12-11-raspios-bookworm-arm64-lite.img
 ```
+journalctl -fex
+```
+
+If it succeeds on the server machine, then you will see message on the client machine where the control is transfered. 
+
+Depending on your configuration, dnsmasq won't be needed anymore.
+
 
 > [!NOTE]
 > Make sure to avoid any confusion and make backups of these files before working on live systems : 
@@ -75,3 +79,15 @@ pxe-service=0,"Raspberry Pi Boot"
 ```
 
 
+
+#### Backwards ...
+```
+sudo systemctl stop dnsmasq
+sudo umount -v /srv/tftp/$SERIAL_NUMBER
+sudo umount -v /pxe/boot/firmware
+sudo umount-v  /pxe
+
+sudo rmdir -v /pxe
+
+sudo kpartx -vd 2023-12-11-raspios-bookworm-arm64-lite.img
+```
