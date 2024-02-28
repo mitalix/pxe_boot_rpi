@@ -58,26 +58,19 @@ Depending on your configuration, dnsmasq won't be needed anymore.
 > Edit /etc/fstab /boot/cmdline.txt on the client system (directly through the mounts done above)
 
 **/boot/cmdline.txt:**
-
 ```
 CMDLINE="console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,vers=3 rw ip=dhcp rootwait elevator=deadline"
 ```
-
+**/etc/fstab :**
+```FSTAB="192.168.0.206:/pxe / nfs defaults,vers=3 0 0
+192.168.0.206:/pxe/boot/firmware /boot/firmware nfs defaults,vers=3 0 0"
+```
 **/etc/exports:**
- 
 ```/srv/tftp *(rw,sync,no_subtree_check,no_root_squash)
 /pxe/boot/firmware *(rw,sync,no_subtree_check,no_root_squash)
 /pxe *(rw,sync,no_subtree_check,no_root_squash)
 ```
-
-**/etc/fstab :**
-
-```FSTAB="192.168.0.206:/pxe / nfs defaults,vers=3 0 0
-192.168.0.206:/pxe/boot/firmware /boot/firmware nfs defaults,vers=3 0 0"
-```
-
 **/etc/dnsmasq.conf :**
-
 ```
 interface=*
 dhcp-range=192.168.0.10,192.168.0.50,12h
@@ -86,7 +79,6 @@ enable-tftp
 tftp-root=/srv/tftp
 pxe-service=0,"Raspberry Pi Boot"
 ```
-
 
 
 #### Backwards ...
