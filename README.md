@@ -1,14 +1,7 @@
-# PXE boot RPI
+Tested on physical machines
 
-Tested on 
-
-rpi3b+ -->> 76d2a334
-
-rpi4b  -->> ac8854ec
-
-SERIAL_NUMBER=76d2a334
-
-SERIAL_NUMBER=ac8854ec
+rpi3b+ -->> SERIAL_NUMBER=76d2a334
+rpi4b  -->> SERIAL_NUMBER=ac8854ec
 
 #### Forwards ...
 
@@ -24,7 +17,7 @@ sudo mkdir -v /srv/tftp/$SERIAL_NUMBER
 
 sudo mount -v -o bind /pxe/boot/firmware /srv/tftp/$SERIAL_NUMBER
 
-sudo systemctl daemon-reload
+sudo systemctl daemon-reload # only needed when changing config
 
 sudo systemctl start dnsmasq
 
@@ -43,7 +36,7 @@ sudo kpartx -vd 2023-12-11-raspios-bookworm-arm64-lite.img
 ```
 
 > [!NOTE]
-> Make sure you make backups of these files before working on live systems : 
+> Make sure to avoid any confusion and make backups of these files before working on live systems : 
 - /etc/fstab 
 - /boot/cmdline.txt 
 - /etc/exports 
@@ -64,9 +57,6 @@ CMDLINE="console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206
 /pxe *(rw,sync,no_subtree_check,no_root_squash)
 ```
 
-
-sudo exportfs -a
-
 **/etc/fstab :**
 
 ```FSTAB="192.168.0.206:/pxe / nfs defaults,vers=3 0 0
@@ -74,7 +64,6 @@ sudo exportfs -a
 ```
 
 **/etc/dnsmasq.conf :**
-
 
 ```
 interface=*
