@@ -3,7 +3,7 @@
 
 
 
-#### Tested on physical machines
+### Tested on physical machines
 
 - rpi3b+ -->> SERIAL_NUMBER=76d2a334
 - rpi4b  -->> SERIAL_NUMBER=ac8854ec
@@ -12,11 +12,11 @@ Using a Dell wireless laptop 6.1.71-1-MANJARO to serve tftp and nfs
 
 Very useful information :https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#network-booting
 
-#### Forwards ...
+### Forwards ...
 
 Go to https://www.raspberrypi.com/software/operating-systems/ to dowload and extract your image.
 
-Run these commands ...
+#### Run these commands ...
 
 ```
 sudo kpartx -va 2023-12-11-raspios-bookworm-arm64-lite.img
@@ -85,7 +85,7 @@ pxe-service=0,"Raspberry Pi Boot"
 ```
 
 
-#### Backwards ...
+### Backwards ...
 ```
 sudo systemctl stop dnsmasq
 sudo umount -v /srv/tftp/$SERIAL_NUMBER
