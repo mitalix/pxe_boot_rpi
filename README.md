@@ -1,7 +1,7 @@
-Tested on physical machines
+#### Tested on physical machines
 
-rpi3b+ -->> SERIAL_NUMBER=76d2a334
-rpi4b  -->> SERIAL_NUMBER=ac8854ec
+- rpi3b+ -->> SERIAL_NUMBER=76d2a334
+- rpi4b  -->> SERIAL_NUMBER=ac8854ec
 
 #### Forwards ...
 
