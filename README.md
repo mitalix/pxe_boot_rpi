@@ -90,9 +90,9 @@ pxe-service=0,"Raspberry Pi Boot"
 sudo systemctl stop dnsmasq
 sudo umount -v /srv/tftp/$SERIAL_NUMBER
 sudo umount -v /pxe/boot/firmware
-sudo umount-v  /pxe
+sudo umount -v  /pxe
 
-sudo rmdir -v /pxe
+sudo rmdir  -v /pxe
 
 sudo kpartx -vd 2023-12-11-raspios-bookworm-arm64-lite.img
 ```
