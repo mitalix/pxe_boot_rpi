@@ -29,6 +29,13 @@ sudo mount -v /dev/mapper/loop0p1 /pxe/boot/firmware
 sudo mkdir -v /srv/tftp/$SERIAL_NUMBER
 
 sudo mount -v -o bind /pxe/boot/firmware /srv/tftp/$SERIAL_NUMBER
+```
+When booting rpi3b+ bootcode.bin needs to be in the parent directory. See the link above that describes booting over the network for why this is needed.
+```
+sudo /srv/tftp/76d2a334/bootcode.bin /srv/tftp/bootcode.bin
+```
+Export the NFS mounts and start dnsmasq. Optionally, reload config when changing mount information
+```
 
 sudo systemctl daemon-reload # only needed when changing config
 
@@ -61,6 +68,7 @@ Depending on your configuration, dnsmasq won't be needed anymore.
 > [!NOTE]
 > Edit /etc/fstab /boot/cmdline.txt on the client system (directly through the mounts done above)
 
+##### On the Client:
 **/boot/cmdline.txt:**
 ```
 console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,vers=3 rw ip=dhcp rootwait elevator=deadline
@@ -70,6 +78,8 @@ console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,ver
 192.168.0.206:/pxe / nfs defaults,vers=3 0 0
 192.168.0.206:/pxe/boot/firmware /boot/firmware nfs defaults,vers=3 0 0
 ```
+##### On the Server:
+**/boot/cmdline.txt:**
 **/etc/exports:**
 ```
 /srv/tftp *(rw,sync,no_subtree_check,no_root_squash)
