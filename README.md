@@ -30,7 +30,7 @@ sudo mkdir -v /srv/tftp/$SERIAL_NUMBER
 
 sudo mount -v -o bind /pxe/boot/firmware /srv/tftp/$SERIAL_NUMBER
 ```
-When booting rpi3b+ bootcode.bin needs to be in the parent directory. See the link above that describes booting over the network for why this is needed.
+When booting rpi3b+ bootcode.bin needs to be in the parent directory. See the link above that describes the difference between rpi3 and rpi4 and when booting over the network for this is needed.
 ```
 sudo /srv/tftp/76d2a334/bootcode.bin /srv/tftp/bootcode.bin
 ```
