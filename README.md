@@ -77,7 +77,6 @@ console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.0.206:/pxe,ver
 192.168.0.206:/pxe/boot/firmware /boot/firmware nfs defaults,vers=3 0 0
 ```
 ##### On the Server:
-**/boot/cmdline.txt:**
 **/etc/exports:**
 ```
 /srv/tftp *(rw,sync,no_subtree_check,no_root_squash)
