@@ -8,11 +8,11 @@
 
 Using a Dell wireless laptop 6.1.71-1-MANJARO to serve tftp and nfs
 
-Very useful information : https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#network-booting
+Very useful information : [RPI Network Boot](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#network-booting)
 
 ### Forwards ...
 
-Go to https://www.raspberrypi.com/software/operating-systems/ to dowload and extract your image.
+Go to [RPI OS](https://www.raspberrypi.com/software/operating-systems/) to download and extract your image.
 
 #### Check the *Configuration* section below and then *Run* these commands ...
 
