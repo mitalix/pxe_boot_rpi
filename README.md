@@ -4,7 +4,7 @@
 ### Tested on physical machines
 
 - `rpi3b+ -->> SERIAL_NUMBER=76d2a334`
-- `rpi4b  --->> SERIAL_NUMBER=ac8854ec`
+- `rpi4b  -->> SERIAL_NUMBER=ac8854ec`
 
 Using a Dell wireless laptop 6.1.71-1-MANJARO to serve tftp and nfs
 
