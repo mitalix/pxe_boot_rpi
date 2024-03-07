@@ -50,7 +50,7 @@ journalctl -fex
 
 If it succeeds on the server machine, then you will see messages on the client machine where the control is transferred. 
 
-Depending on your configuration, dnsmasq won't be needed anymore.
+This means that depending on your configuration, dnsmasq won't be needed anymore.
 
 ### Configuration
 
