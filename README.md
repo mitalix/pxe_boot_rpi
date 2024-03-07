@@ -6,7 +6,7 @@
 - `rpi3b+ -->> SERIAL_NUMBER=76d2a334`
 - `rpi4b  -->> SERIAL_NUMBER=ac8854ec`
 
-Using a Dell wireless laptop 6.1.71-1-MANJARO to serve tftp and nfs
+Using a Dell laptop 6.1.71-1-MANJARO over wifi to serve tftp and nfs
 
 Very useful information : [RPI Network Boot](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#network-booting)
 
