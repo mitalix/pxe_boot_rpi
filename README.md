@@ -106,14 +106,3 @@ sudo rmdir  -v /pxe
 sudo kpartx -vd 2023-12-11-raspios-bookworm-arm64-lite.img
 ```
 
-
-
-```dot
-digraph G {
-    A -> B
-    B -> C
-    B -> D
-}
-```
-
-
